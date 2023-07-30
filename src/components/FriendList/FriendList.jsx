@@ -1,17 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  FriendListUl,
+  FriendListLi,
+  FriendListSpan,
+} from './FriendList.styled';
 
 export const FriendList = ({ friends }) => {
   return (
-    <ul>
+    <FriendListUl>
       {friends.map(({ avatar, name, isOnline, id }) => (
-        <li key={id}>
-          <span>{isOnline ? 'Online' : 'Offline'}</span>
-          <img src={avatar} alt={name} />
+        <FriendListLi key={id}>
+          <FriendListSpan
+            style={{
+              backgroundColor: isOnline ? 'green' : 'red',
+            }}
+          >
+            {/* {isOnline ? 'Online' : 'Offline'} */}
+          </FriendListSpan>
+          <img src={avatar} alt={name} width="48px" />
           <p>{name}</p>
-        </li>
+        </FriendListLi>
       ))}
-    </ul>
+    </FriendListUl>
   );
 };
 
