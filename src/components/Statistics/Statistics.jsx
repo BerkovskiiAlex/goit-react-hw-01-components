@@ -10,7 +10,7 @@ import {
 export const Statistics = ({ title, stats }) => {
   return (
     <StatisticsSection>
-      <StatisticsH2>{title}</StatisticsH2>
+      {title ? <StatisticsH2>{title}</StatisticsH2> : null}
       <StatisticsUl>
         {stats.map(({ id, label, percentage }) => (
           <StatisticsLi
