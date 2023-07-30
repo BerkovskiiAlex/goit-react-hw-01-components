@@ -1,5 +1,6 @@
+import '../styles/_reset.scss';
 import 'modern-normalize';
-// import { styled } from 'styled-components';
+import { styled } from 'styled-components';
 
 import { Profile } from './Profile/Profile';
 import { Statistics } from './Statistics/Statistics';
@@ -13,11 +14,20 @@ import transactions from '../assets/transactions.json';
 
 export const App = () => {
   return (
-    <div>
-      <Profile user={user} />
-      <Statistics title={'Upload stats'} stats={data} />
-      <FriendList friends={friends} />
-      <TransactionHistory items={transactions} />
-    </div>
+    <Container>
+      <div>
+        <Profile user={user} />
+        <Statistics title={'Upload stats'} stats={data} />
+        <FriendList friends={friends} />
+        <TransactionHistory items={transactions} />
+      </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

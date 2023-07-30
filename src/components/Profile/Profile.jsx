@@ -1,33 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  ProfileSection,
+  DescriptionContainer,
+  StatsContainer,
+  StatsItems,
+} from './Profile.styled.js';
 
 export const Profile = props => {
   const { username, tag, location, avatar, stats } = props.user;
   const { followers, views, likes } = stats;
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt={tag} className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">{tag}</p>
-        <p className="location">{location}</p>
-      </div>
+    <ProfileSection>
+      <DescriptionContainer>
+        <img
+          src={avatar}
+          alt={tag}
+          style={{ borderRadius: '50%', width: '300px' }}
+        />
+        <h2>{username}</h2>
+        <p>{tag}</p>
+        <p>{location}</p>
+      </DescriptionContainer>
 
-      <ul className="stats">
-        <li>
+      <StatsContainer>
+        <StatsItems>
           <span className="label">Followers</span>
           <span className="quantity">{followers}</span>
-        </li>
-        <li>
+        </StatsItems>
+        <StatsItems>
           <span className="label">Views</span>
           <span className="quantity">{views}</span>
-        </li>
-        <li>
+        </StatsItems>
+        <StatsItems>
           <span className="label">Likes</span>
           <span className="quantity">{likes}</span>
-        </li>
-      </ul>
-    </div>
+        </StatsItems>
+      </StatsContainer>
+    </ProfileSection>
   );
 };
 
