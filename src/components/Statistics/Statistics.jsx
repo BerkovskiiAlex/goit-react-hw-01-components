@@ -1,19 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  StatisticsSection,
+  StatisticsH2,
+  StatisticsUl,
+  StatisticsLi,
+} from './Statistics.styled';
 
 export const Statistics = ({ title, stats }) => {
   return (
-    <section>
-      <h2>{title}</h2>
-      <ul>
+    <StatisticsSection>
+      <StatisticsH2>{title}</StatisticsH2>
+      <StatisticsUl>
         {stats.map(({ id, label, percentage }) => (
-          <li key={id}>
+          <StatisticsLi
+            key={id}
+            color={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
+          >
             <span>{label}</span>
             <span>{percentage}%</span>
-          </li>
+          </StatisticsLi>
         ))}
-      </ul>
-    </section>
+      </StatisticsUl>
+    </StatisticsSection>
   );
 };
 

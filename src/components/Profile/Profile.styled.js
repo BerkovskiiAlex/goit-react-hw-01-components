@@ -5,7 +5,6 @@ export const ProfileSection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid lightgrey;
   background-color: rgba(106, 147, 176, 0.1);
   max-width: 1200px;
   margin: 0 auto;
