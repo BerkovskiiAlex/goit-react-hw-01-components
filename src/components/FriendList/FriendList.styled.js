@@ -10,6 +10,7 @@ export const FriendListUl = styled.ul`
   margin: 0 auto;
   height: 300px;
   gap: 10px;
+  padding-bottom: 40px;
 `;
 
 export const FriendListLi = styled.li`
