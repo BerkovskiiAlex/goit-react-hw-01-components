@@ -11,13 +11,7 @@ export const FriendList = ({ friends }) => {
     <FriendListUl>
       {friends.map(({ avatar, name, isOnline, id }) => (
         <FriendListLi key={id}>
-          <FriendListSpan
-            style={{
-              backgroundColor: isOnline ? 'green' : 'red',
-            }}
-          >
-            {/* {isOnline ? 'Online' : 'Offline'} */}
-          </FriendListSpan>
+          <FriendListSpan $isOnline={isOnline} />
           <img src={avatar} alt={name} width="48px" />
           <p>{name}</p>
         </FriendListLi>

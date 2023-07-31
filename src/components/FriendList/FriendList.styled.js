@@ -28,4 +28,5 @@ export const FriendListSpan = styled.span`
   padding: 10px;
   border-radius: 50%;
   margin-left: 5px;
+  background-color: ${props => (props.$isOnline ? 'green' : 'red')};
 `;
